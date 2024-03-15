@@ -113,7 +113,7 @@
                                 <label for="usr">Image</label>
                                
                                 <label style="color: #a1a1a1"><!-- (800px X 472px) --></label>
-                                    <div id="cate_image" class="imagePreview">
+                                    <div id="Image_div" class="imagePreview">
 
                                     </div>
                                     <!-- <img src="<?=base_url()?>media/image/blog/<?=$blog->Thumbnail?>"> -->
