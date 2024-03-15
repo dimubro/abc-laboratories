@@ -66,6 +66,7 @@ $route['admin/Delete-User/(:any)'] = 'admin/user/delete/$1';
 $route['admin/Test-Types'] = 'admin/Test_type/index';
 $route['admin/Create-Test-Type'] = 'admin/Test_type/create';
 $route['admin/Edit-Test-Types/(:any)'] = 'admin/Test_type/edit/$1';
+$route['admin/Delete-Test-Types/(:any)'] = 'admin/Test_type/delete/$1';
 
 $route['admin/Rooms'] = 'admin/Rooms/index';
 $route['admin/Create-Room'] = 'admin/Rooms/create';
@@ -73,25 +74,4 @@ $route['admin/Edit-Room/(:any)'] = 'admin/Rooms/edit/$1';
 $route['admin/Delete-Room/(:any)'] = 'admin/Rooms/delete/$1';
 
 // home
-$route['pre-search'] = 'vehicle/per_search';
-$route['Search'] = 'vehicle/search';
-$route['blog'] = 'blog';
-$route['About-Us'] = 'home/about';
-$route['Contact-Us'] = 'home/contact';
-$route['faq'] = 'home/faq';
-$route['Thank-You/(:any)'] = 'home/thank_you/$1';
-$route['Payment-Fail'] = 'home/payment_fial';
-$route['Invoice'] = 'home/invoice';
-$route['Round-Trip'] = 'home/round_trip_packages';
-$route['Round-Trip-Search'] = 'vehicle/round_trip_search';
-$route['Day-Packages'] = 'home/day_packages';
-$route['Round-Trip-Custom'] = 'vehicle/round_custom';
-
-$route['Products'] = 'home/products';
-$route['Product-Details/(:any)/(:any)'] = 'home/product_details/$1/$2';
-$route['Services'] = 'home/services';
-$route['Service-Details/(:any)/(:any)'] = 'home/service_details/$1/$2';
-// $route['Product-Details/(:any)/(:any)'] = 'home/product_details/$1/$2';
-$route['Brands'] = 'home/brands';
-$route['News-And-Events'] = 'home/news_and_events';
-$route['News-And-Events/(:any)/(:any)'] = 'home/news_and_events_details/$1/$2';
+$route['pre-search'] = 'home/per_search';

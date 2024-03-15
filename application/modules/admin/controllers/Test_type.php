@@ -84,5 +84,19 @@ class Test_type extends MY_Controller
     	}
 
     }
+    public function delete($TestTypeId){
+        $data = array('IsDeleted' => 1 );
+        $res = $this->model->update($TestTypeId, $data);
+            if($res){
+                $this->session->set_flashdata('notification', '<div class="alert alert-success">
+                    <strong>Success!</strong> Record succesfully updated !!!
+                  </div>');
+            }else{
+                $this->session->set_flashdata('notification', '<div class="alert alert-danger">
+                    <strong>wrong!</strong> Somthing went wrong !!!
+                  </div>');
+            }
+        redirect(base_url().'admin/Test-Types');
+    }
 
 }
