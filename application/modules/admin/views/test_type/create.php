@@ -99,13 +99,13 @@
                                     <div class="col-md-4">
                                       <div class="form-group">
                                         <label for="usr">Asstmated Time for one test (munite)</label>
-                                        <input type="text" required="" onkeypress="return isNumber(event);" value="<?=$obj->TestTitle?>" name="form[AsstmatedTime]" class="form-control" id="usr">
+                                        <input type="text" required="" onkeypress="return isNumber(event);" value="<?=$obj->AsstmatedTime?>" name="form[AsstmatedTime]" class="form-control" id="usr">
                                       </div>
                                     </div>
                                     <div class="col-md-8">
                                       <div class="form-group">
                                         <label for="usr">Description</label>
-                                        <input type="text" required="" value="<?=$obj->TestTitle?>" name="form[Description]" class="form-control" id="usr">
+                                        <input type="text" required="" value="<?=$obj->Description?>" name="form[Description]" class="form-control" id="usr">
                                       </div>
                                     </div>
                                     <div class="col-md-4 imgUp">
