@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--begin::Head-->
-
-<head>
-	<meta charset="utf-8" />
-	<title><?= title ?></title>
-	<meta name="description" content="Login page example" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-	<!--begin::Fonts-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-	<!--end::Fonts-->
-
-
-	<!--begin::Page Custom Styles(used by this page)-->
-	<link href="<?= base_url() ?>assets/admin/css/pages/login/classic/login-5.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<!--end::Page Custom Styles-->
-
-	<!--begin::Global Theme Styles(used by all pages)-->
-	<link href="<?= base_url() ?>assets/admin/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url() ?>assets/admin/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url() ?>assets/admin/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<!--end::Global Theme Styles-->
-
-	<!--begin::Layout Themes(used by all pages)-->
-
-	<link href="<?= base_url() ?>assets/admin/css/themes/layout/header/base/light.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url() ?>assets/admin/css/themes/layout/header/menu/light.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url() ?>assets/admin/css/themes/layout/brand/dark.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url() ?>assets/admin/css/themes/layout/aside/dark.css?v=7.0.6" rel="stylesheet" type="text/css" />
-	<!--end::Layout Themes-->
-
-	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="<?=base_url()?>assets/html/favi/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url()?>assets/html/favi/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url()?>assets/html/favi/favicon-16x16.png">
-    <link rel="manifest" href="<?=base_url()?>assets/html/favi/site.webmanifest">
-    <link rel="mask-icon" href="<?=base_url()?>assets/html/favi/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="<?=base_url()?>assets/html/favi/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="<?=base_url()?>assets/html/favi/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-</head>
+<?php $this->load->view('include/header'); ?>
 <!--end::Head-->
 
 <!--begin::Body-->
@@ -103,9 +60,4 @@
 
 		<!--end::Login-->
 	</div>
-
-	<!--end::Main-->
-</body>
-<!--end::Body-->
-
-</html>
+<?php $this->load->view('include/footer'); ?>
