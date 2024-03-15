@@ -54,7 +54,17 @@ class Test_type extends MY_Controller
                 }
             $TestTypeId = $this->input->post('TestTypeId');
             if($TestTypeId){
-
+                $res = $this->model->update($TestTypeId, $post);
+                if($res){
+                    $this->session->set_flashdata('notification', '<div class="alert alert-success">
+                    <strong>Success!</strong> Record succesfully updated !!!
+                  </div>');
+                }else{
+                    $this->session->set_flashdata('notification', '<div class="alert alert-danger">
+                    <strong>wrong!</strong> Somthing went wrong !!!
+                  </div>');
+                }
+                redirect(base_url().'admin/Edit-Test-Types/'.$TestTypeId);
             }else{
             	// print_r($post);
             	$post['CreatedBy'] = $this->session->user->UserId;

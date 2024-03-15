@@ -43,4 +43,8 @@ class Test_type_model extends CI_Model
 		$data = $this->db->get('test_type');
 		return $data->row();
 	}
+	public function update($TestTypeId, $post){
+		$this->db->where('TestTypeId', $TestTypeId);
+		return $this->db->update('test_type', $post);
+	}
 }
