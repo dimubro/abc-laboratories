@@ -177,6 +177,18 @@ function isNumber(evt) {
 
         return true;
     }
+    $( document ).ready(function() {
+
+    var Image = '';
+        Image = '<?=$obj->Image?>';
+    if (Image) {
+        $('#Image_div').css("background-image", "url('<?=base_url()?>media/image/"+Image+"')");
+    }
+
+   
+   
+
+});
 </script>
 
 
