@@ -93,7 +93,7 @@ define('DB', 'abc_laboratories');
 define('USERNAME', 'root');
 define('PASSWORD', '');
 
-define('DOMAIN', "http://{$_SERVER['SERVER_NAME']}/abc_laboratories/");
+define('DOMAIN', "http://{$_SERVER['SERVER_NAME']}/abc-laboratories/");
 define('UP', DOMAIN . "media/image/");
 define('DOC', DOMAIN . "media/doc/");
 
