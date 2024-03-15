@@ -1,0 +1,89 @@
+
+        body {
+            /*font-family: 'Arial', sans-serif;*/
+            font-family: "Poppins", sans-serif;
+            /*font-weight: 100;*/
+            font-style: normal;
+            background-color: #e1e1e1;
+        }
+        th{
+            text-align: center !important;
+        }
+
+        #sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 20px;
+            padding-right: 10px;
+            color: #fff;
+        }
+
+        #content {
+            margin-left: 250px;
+            padding: 15px;
+        }
+        .bg-blue{
+            background-color: #343a40 !important;
+        }
+        .admin_user_name{
+            /*color: #ffffff;*/
+            color: #979797 !important;
+            font-weight: bold;
+        }
+        .admin-title{
+            font-weight: bold;
+            color: #cacaca;
+        }
+        .a-color{
+            color: #b9b9b9;
+            text-decoration: none;
+            background-color: transparent;
+            font-weight: 500;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .a-color-sub{
+            color: #b9b9b9;
+            text-decoration: none;
+            background-color: transparent;
+            /*font-weight: 550;*/
+            /*margin-top: 5px;
+            margin-bottom: 5px;*/
+        }
+        a:hover {
+            background-color: #434d57;
+          color: #fff !important;
+          text-decoration: underline;
+        }
+        .title_page{
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .card_backgroud{
+            background-color: #ffffff;
+        }
+        .side-bar-icon{
+            font-size: 20px;
+            margin-right: 10px;
+            color: #5084ff;;
+        }
+        .page-title-div{
+            background-color: #ffffff;
+            padding: 0;
+        }
+        .card-title{
+            color: #000;
+              font-weight: normal;
+              font-size: 18px;
+              margin-top: 20px;
+              font-weight: 550;
+        }
+        .table-style{
+            font-weight: normal;
+        }
+        
