@@ -18,8 +18,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
 
-    <link href="<?= base_url() ?>assets/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url() ?>assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
+ 
     <link href="<?= base_url() ?>assets/admin/css/image-upload.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- <link href="<?= base_url() ?>assets/css/custom.css" rel="stylesheet" type="text/css" /> -->
