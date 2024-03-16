@@ -34,6 +34,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link a-color" href="<?=base_url()?>admin/Tests">
+                    <i class="fas fa-vial side-bar-icon"></i> Tests
+                </a>
+                
+            </li>
+            <li class="nav-item">
                 <a class="nav-link a-color" href="<?=base_url()?>admin/User">
                     <i class="fas fa-users side-bar-icon"></i> User
                 </a>

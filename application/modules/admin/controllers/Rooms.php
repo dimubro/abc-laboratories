@@ -1,6 +1,6 @@
 <?php
 include_once APPPATH . "modules/admin/core/MY_Controller.php";
-class Rooms extends CI_Controller
+class Rooms extends MY_Controller
 //class Home extends MY_Controller
 {
 	function __construct()

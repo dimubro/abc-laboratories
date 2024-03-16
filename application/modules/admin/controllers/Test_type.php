@@ -36,7 +36,7 @@ class Test_type extends MY_Controller
     	$data['rooms'] = $this->model->get_all_rooms($rooms);
     	$this->load->view('test_type/create', $data);
     }
-    public function save_room(){
+    public function save_form(){
     	if ($post = $this->input->post('form')) {
     		 	$this->img_width = '800px';
                 $this->img_height = '472px';

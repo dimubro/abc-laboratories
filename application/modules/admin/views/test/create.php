@@ -72,43 +72,36 @@
                     <!-- <a href="<?=base_url()?>admin/Create-User" class="btn btn-primary">Add User</a> -->
                       </div>
                       <?php 
-                        $hidden = array('TestTypeId' => $obj->TestTypeId);
-                        echo form_open_multipart('admin/test_type/save_form', '', $hidden);
+                        $hidden = array('TestId' => $obj->TestId);
+                        echo form_open_multipart('admin/test/save_form', '', $hidden);
                         ?>
                       <div class="card-body">
                           <div class="row">
-                              <div class="col-md-12">
+                              <div class="col-md-8">
                                   <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                       <div class="form-group">
-                                        <label for="usr">Test Category Title:</label>
+                                        <label for="usr">Test Title:</label>
                                         <input type="text" required="" value="<?=$obj->TestTitle?>" name="form[TestTitle]" class="form-control" id="usr">
                                       </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    
+                                    <div class="col-md-6">
                                       <div class="form-group">
-                                        <label for="usr">Room:</label>
-                                        <select name="form[RoomId]" class="form-control" id="sel1">
-                                          <option value="">Select Room</option>
-                                          <?php foreach ($rooms as $k => $val): ?>
-                                            <option <?=($val->RoomId==$obj->RoomId)?"selected":""?> value="<?=$val->RoomId?>"><?=$val->RoomNumber?></option>
-                                          <?php endforeach ?>
-                                        </select>
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                      <!-- <div class="form-group">
                                         <label for="usr">Asstmated Time for one test (munite)</label>
                                         <input type="text" required="" onkeypress="return isNumber(event);" value="<?=$obj->AsstmatedTime?>" name="form[AsstmatedTime]" class="form-control" id="usr">
-                                      </div> -->
-                                    </div>
-                                    <div class="col-md-8">
-                                      <div class="form-group">
-                                        <label for="usr">Description</label>
-                                        <input type="text" required="" value="<?=$obj->Description?>" name="form[Description]" class="form-control" id="usr">
                                       </div>
                                     </div>
-                                    <div class="col-md-4 imgUp">
+                                    <div class="col-md-12">
+                                      <div class="form-group">
+                                        <label for="usr">Description</label>
+                                        <textarea class="form-control" name="form[Description]"></textarea>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                              </div>
+                              <div class="col-md-4 imgUp">
 
                                 <label for="usr">Image</label>
                                
@@ -122,15 +115,61 @@
                                           echo "required=\"\"";
                                         } ?> class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
                                 </div>
-                                  </div>
-                              </div>
                           </div>
+                      </div>
+                      <!-- <div class="card-footer">
+                        <button type="submit" class="btn btn btn-primary">Save</button>
+                      </div> -->
+                      
+                    </div>
+                    <div class="card card_backgroud mt-5 mb-5">
+                      <div class="card-header d-flex justify-content-between align-items-center"><label class="card-title">Pricing</label>
+                    <!-- <a href="<?=base_url()?>admin/Create-User" class="btn btn-primary">Add User</a> -->
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="usr">Price:</label>
+                                    <input type="text" required="" onkeypress="return isNumber(event);" value="<?=$obj->Price?>" name="form[Price]" class="form-control" id="usr">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <label for="usr"></label>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="checkbox" onclick="check_is_discount();" class="form-check-input" name="form[IsDiscount]" id="IsDiscount" value="1">Is Discount:
+                                      </label>
+                                    </div>
+                            </div>
+                            <div id="percentage_div" style="display: none;" class="col-md-4">
+                                <div class="form-group">
+                                    <label for="usr">Discount Percentage (%):</label>
+                                    <input type="text" required="" onkeypress="return isNumber(event);" value="<?=$obj->Percentage?>" name="form[Percentage]" class="form-control" id="usr">
+                                </div>
+                            </div>
+                            <div  id="start_date_div" style="display: none;" class="col-md-4">
+                                <div class="form-group">
+                                    <label for="usr">Discount Start Date:</label>
+                                    <input type="text" required=""  value="<?=$obj->Percentage?>" name="form[StartDate]" class="form-control" id="datepicker11">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div id="end_date_div" style="display: none;" class="form-group">
+                                    <label for="usr">Discount End Date:</label>
+                                    <input type="text" required="" value="<?=$obj->Percentage?>" name="form[EndDate]" class="form-control" id="datepicker12">
+                                </div>
+                            </div>
+                        </div>
                       </div>
                       <div class="card-footer">
                         <button type="submit" class="btn btn btn-primary">Save</button>
                       </div>
-                      <?= form_close() ?> 
                     </div>
+                    <!-- <div class="card-footer">
+                        <button type="submit" class="btn btn btn-primary">Save</button>
+                      </div> -->
+                    <?= form_close() ?> 
                 </div>
             </div>
         </main>
@@ -188,6 +227,38 @@ function isNumber(evt) {
    
    
 
+});
+function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if(charCode==46){
+
+        }else{
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        }
+
+        return true;
+}
+function check_is_discount(){
+    // alert('ela');
+    if($('#IsDiscount').is(':checked')){
+        $("#percentage_div").css("display", "block");
+        $("#start_date_div").css("display", "block");
+        $("#end_date_div").css("display", "block");
+
+    }else{
+        $("#percentage_div").css("display", "none");
+        $("#start_date_div").css("display", "none");
+        $("#end_date_div").css("display", "none");
+    } 
+}
+$('#datepicker11').datepicker({
+    format: 'yyyy-mm-dd'
+});
+$('#datepicker12').datepicker({
+    format: 'yyyy-mm-dd'
 });
 </script>
 

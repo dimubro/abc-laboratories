@@ -22,6 +22,10 @@
     <link href="<?= base_url() ?>assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
     <link href="<?= base_url() ?>assets/admin/css/image-upload.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    
+
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css " rel="stylesheet">
     <!-- <link href="<?= base_url() ?>assets/css/custom.css" rel="stylesheet" type="text/css" /> -->
 </head>
 <script type="text/javascript">
