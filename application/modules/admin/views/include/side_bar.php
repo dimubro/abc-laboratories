@@ -38,6 +38,11 @@
                     <i class="fas fa-users side-bar-icon"></i> User
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link a-color" href="<?=base_url()?>admin/login/log_out">
+                    <i class="fas fa-sign-out-alt side-bar-icon"></i> Log Out
+                </a>
+            </li>
         </ul>
 
 

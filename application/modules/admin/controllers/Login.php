@@ -33,7 +33,7 @@ class Login extends CI_Controller
 		}
 	}
 
-	public function sign_out()
+	public function log_out()
 	{
 		$this->session->unset_userdata('url');
 		$this->session->sess_destroy();
