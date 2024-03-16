@@ -13,6 +13,7 @@ class Test extends MY_Controller
 	}
 	public function index(){
 		// echo "els";
+		$data['records'] = $this->test_type->get_all();
 		$this->load->view('test/index');
 	}
 	public function create(){
