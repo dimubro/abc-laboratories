@@ -86,4 +86,13 @@
         .table-style{
             font-weight: normal;
         }
+        .login_form{
+            margin-top: 200px;
+        }
+        .font-login-color{
+            color: #ff0000;
+        }
+        .login-heder-text{
+            font-weight: bold;
+        }
         
