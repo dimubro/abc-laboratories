@@ -14,6 +14,7 @@
             </div>
             <div class="row mx-3">
                 <div class="col-md-12">
+                  <?=$this->session->flashdata('notification')?>
                     <div class="card card_backgroud">
                       <div class="card-header d-flex justify-content-between align-items-center"><label class="card-title">Test List</label>
                     <a href="<?=base_url()?>admin/Create-Test" class="btn btn-primary">Add Test</a>
@@ -27,7 +28,8 @@
       <th scope="col">#</th>
       <th scope="col">Image</th>
       <th scope="col">Test Type</th>
-      <th scope="col">Room</th>
+      <th scope="col">Test</th>
+      <th scope="col">Price</th>
       <!-- <th scope="col">Assimated Time</th> -->
       <th scope="col">Action</th>
     </tr>
@@ -37,11 +39,12 @@
     <tr>
       <td><center><?=$k+1?></td>
       <td><center><img style="width: 20%;" src="<?=base_url()?>media/image/<?=$val->Image?>"></center></td>
-      <td><center><?=$val->TestTitle?></center></td>
-      <td><center>Room <?=$val->RoomNumber?></center></td>
+      <td><center><?=$val->test_cate_title?></center></td>
+      <td><center><?=$val->test_title?></center></td>
+      <td><center>LKR <?=number_format($val->Price, 2)?></center></td>
       <!-- <td><center><?=$val->AsstmatedTime?> Minutes</center></td> -->
-      <td><center><a class="btn btn-warning btn-sm" href="<?=base_url()?>admin/Edit-Test-Types/<?=$val->TestTypeId ?>"><i class="fas fa-pen"></i></a>
-        <button class="btn btn-danger btn-sm" onclick="delete_modal('<?= base_url() ?>admin/Delete-Test-Types/<?=$val->TestTypeId ?>');"><i class="fas fa-trash-alt"></i></button></center></td>
+      <td><center><a class="btn btn-warning btn-sm" href="<?=base_url()?>admin/Edit-Test/<?=$val->TestId ?>"><i class="fas fa-pen"></i></a>
+        <button class="btn btn-danger btn-sm" onclick="delete_modal('<?= base_url() ?>admin/Delete-Test/<?=$val->TestId ?>');"><i class="fas fa-trash-alt"></i></button></center></td>
     </tr>
     <?php endforeach ?>
   </tbody>

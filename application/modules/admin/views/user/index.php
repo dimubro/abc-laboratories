@@ -14,6 +14,7 @@
             </div>
             <div class="row mx-3">
                 <div class="col-md-12">
+                   <?=$this->session->flashdata('notification')?>
                     <div class="card card_backgroud">
                       <div class="card-header d-flex justify-content-between align-items-center"><label class="card-title">User List</label>
                     <a href="<?=base_url()?>admin/Create-User" class="btn btn-primary">Add User</a>

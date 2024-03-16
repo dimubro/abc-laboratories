@@ -75,6 +75,8 @@ $route['admin/Delete-Room/(:any)'] = 'admin/Rooms/delete/$1';
 
 $route['admin/Tests'] = 'admin/test/index';
 $route['admin/Create-Test'] = 'admin/test/create';
+$route['admin/Edit-Test/(:any)'] = 'admin/test/edit/$1';
+$route['admin/Delete-Test/(:any)'] = 'admin/test/delete/$1';
 
 // home
 $route['pre-search'] = 'home/per_search';

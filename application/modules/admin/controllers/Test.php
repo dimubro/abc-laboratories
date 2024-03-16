@@ -13,21 +13,21 @@ class Test extends MY_Controller
 	}
 	public function index(){
 		// echo "els";
-		$data['records'] = $this->test_type->get_all();
-		$this->load->view('test/index');
+		$data['records'] = $this->model->get_all();
+		$this->load->view('test/index', $data);
+		// print_r($data['records']);
 	}
 	public function create(){
 		$data['test_type'] = $this->test_type->get_all();
 		$this->load->view('test/create', $data);
 	}
-	// public function save(){
-	// 	if($post = $this->input->post('form')){
-
-	// 	}else{
-	// 		$post['CreatedBy'] = $this->session->user->UserId;
-	// 		print_r($post);
-	// 	}
-	// }
+	public function edit($TestId){
+		$data['test_type'] = $this->test_type->get_all();
+		$data['obj'] = $this->model->get_data($TestId);
+		$this->load->view('test/create', $data);
+		// print_r($data['obj']);
+		// echo $TestId;
+	}
 	public function save_form(){
 		if($post = $this->input->post('form')){
 			if($post['IsDiscount']==1){
@@ -53,7 +53,17 @@ class Test extends MY_Controller
 			// $post['CreatedBy'] = $this->session->user->UserId;
 			$TestId = $this->input->post('TestId');
 			if($TestId){
-
+				$res = $this->model->update($TestId, $post);
+				if($res){
+            		$this->session->set_flashdata('notification', '<div class="alert alert-success">
+                    <strong>Success!</strong> Record succesfully updated !!!
+                  </div>');
+            	}else{
+            		$this->session->set_flashdata('notification', '<div class="alert alert-danger">
+                    <strong>wrong!</strong> Somthing went wrong !!!
+                  </div>');
+            	}
+            	redirect(base_url().'admin/Edit-Test/'.$TestId);
 			}else{
 				$post['CreatedBy'] = $this->session->user->UserId;
 				// print_r($post);
@@ -71,6 +81,20 @@ class Test extends MY_Controller
 			}
 		}
 
+	}
+	public function delete($TestId){
+		$data = array('IsDeleted' => 1 );
+		$res = $this->model->update($TestId, $data);
+		if($res){
+            $this->session->set_flashdata('notification', '<div class="alert alert-success">
+                    <strong>Success!</strong> Record succesfully deleted !!!
+                  </div>');
+         }else{
+            $this->session->set_flashdata('notification', '<div class="alert alert-danger">
+                    <strong>wrong!</strong> Somthing went wrong !!!
+                  </div>');
+        }
+        redirect(base_url().'admin/Tests');
 	}
 
 }

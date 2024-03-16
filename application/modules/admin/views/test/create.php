@@ -98,7 +98,7 @@
                                           <select required="" name="form[TestTypeId]" class="form-control" id="sel1">
                                             <option value="">Select Test Category</option>
                                             <?php foreach ($test_type as $k => $va): ?>
-                                                <option value="<?=$va->TestTypeId?>"><?=$va->TestTitle?></option>
+                                                <option <?=($va->TestTypeId==$obj->TestTypeId)?"selected":""?> value="<?=$va->TestTypeId?>"><?=$va->TestTitle?></option>
                                             <?php endforeach ?>
                                             
                                             
@@ -108,7 +108,7 @@
                                     <div class="col-md-12">
                                       <div class="form-group">
                                         <label for="usr">Description</label>
-                                        <textarea class="form-control" name="form[Description]"></textarea>
+                                        <textarea class="form-control" name="form[Description]"><?=$obj->Description?></textarea>
                                       </div>
                                     </div>
                                     
@@ -151,7 +151,7 @@
                                     <label for="usr"></label>
                                     <div class="form-check">
                                       <label class="form-check-label">
-                                        <input type="checkbox" onclick="check_is_discount();" class="form-check-input" name="form[IsDiscount]" id="IsDiscount" value="1">Is Discount:
+                                        <input type="checkbox" onclick="check_is_discount();" class="form-check-input" <?=($obj->IsDiscount==1)?"checked":""?> name="form[IsDiscount]" id="IsDiscount" value="1">Is Discount:
                                       </label>
                                     </div>
                             </div>
@@ -164,13 +164,13 @@
                             <div  id="start_date_div" style="display: none;" class="col-md-4">
                                 <div class="form-group">
                                     <label for="usr">Discount Start Date:</label>
-                                    <input type="text"  value="<?=$obj->Percentage?>" name="form[StartDate]" class="form-control" id="datepicker11">
+                                    <input type="text"  value="<?=$obj->StartDate?>" name="form[StartDate]" class="form-control" id="datepicker11">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div id="end_date_div" style="display: none;" class="form-group">
                                     <label for="usr">Discount End Date:</label>
-                                    <input type="text" value="<?=$obj->Percentage?>" name="form[EndDate]" class="form-control" id="datepicker12">
+                                    <input type="text" value="<?=$obj->EndDate?>" name="form[EndDate]" class="form-control" id="datepicker12">
                                 </div>
                             </div>
                         </div>
@@ -272,6 +272,9 @@ $('#datepicker11').datepicker({
 });
 $('#datepicker12').datepicker({
     format: 'yyyy-mm-dd'
+});
+$( document ).ready(function() {
+    check_is_discount();
 });
 </script>
 
