@@ -7,12 +7,7 @@
 
 
 
-        <script src="<?= base_url() ?>assets/plugins/global/jquery-ui/jquery.ui.widget.min.js"></script>
-        <script src="<?= base_url() ?>assets/plugins/custom/jQuery-File-Upload/js/jquery.fileupload.js"></script>
-        <script src="<?= base_url() ?>assets/plugins/custom/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
-        <script src="<?= base_url() ?>assets/plugins/custom/jQuery-File-Upload/js/extras/load-image.min.js"></script>
-        <script src="<?= base_url() ?>assets/plugins/custom/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
-        <script src="<?= base_url() ?>assets/plugins/custom/jQuery-File-Upload/js/jquery.fileupload-image.js"></script>
+        
         <script src=" https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js "></script>
 
     <!-- Chart.js -->
