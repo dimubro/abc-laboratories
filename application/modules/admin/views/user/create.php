@@ -44,11 +44,22 @@
                                     <div class="col-md-4">
                                        <div class="form-group">
                                         <label for="sel1">User Type:</label>
-                                        <select required="" name="form[UserType]" class="form-control" id="sel1">
+                                        <select required="" onchange="check_user_type();" name="form[UserType]" class="form-control" id="UserType">
                                           <option value="">Select User Type</option>
                                           <option <?=($obj->UserType==1)?"selected":""?> value="1">Admin</option>
                                           <option <?=($obj->UserType==2)?"selected":""?> value="2">Technician</option>
                                           <option <?=($obj->UserType==3)?"selected":""?> value="3">Receptionist</option>
+                                        </select>
+                                      </div> 
+                                    </div>
+                                    <div style="display: none;" id="section_div" class="col-md-6">
+                                      <div class="form-group">
+                                        <label for="sel1">Section:</label>
+                                        <select required="" name="form[TestTypeId]" class="form-control" id="section_id">
+                                          <option value="">Select Section</option>
+                                          <?php foreach ($records as $k => $v): ?>
+                                            <option <?=($obj->TestTypeId==$obj->TestTypeId)?"selected":""?> value="<?=$v->TestTypeId?>"><?=$v->TestTitle?></option>
+                                          <?php endforeach ?>
                                         </select>
                                       </div> 
                                     </div>
@@ -87,9 +98,24 @@
 <?php $this->load->view('include/page_footer'); ?>
 <?php $this->load->view('include/footer'); ?>
 <script type="text/javascript">
-    $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
+    $( document ).ready(function() {
+      check_user_type();
+    });
+    function check_user_type(){
+      var UserType = $('#UserType').val();
+      // alert(UserType);
+      if(UserType==2){
+        // section_div
+        //section_id
+        $("#section_div").css("display", "block");
+        $('#section_id').attr('required', 'required');
+      }else{
+        $("#section_div").css("display", "none");
+        $('#section_id').removeAttr('required');
+      }
+    }
+
 </script>
+
 
 

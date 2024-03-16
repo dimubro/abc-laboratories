@@ -8,7 +8,7 @@ class User extends CI_Controller
 		parent::__construct();
 		$this->load->model('User_model', 'model');
 		// $this->load->model('Batch_model', 'batch');
-		
+		$this->load->model('Test_type_model', 'test_type');
 	}
     function index()
     {
@@ -18,8 +18,8 @@ class User extends CI_Controller
     }
 
     public function create(){
-
-		$this->load->view('user/create');
+    	$data['records'] = $this->test_type->get_all();
+			$this->load->view('user/create', $data);
     }
     public function save_user(){
     	if ($post = $this->input->post('form')) {
@@ -77,6 +77,7 @@ class User extends CI_Controller
     	}
     }
     public function edit($user_id){
+    $data['records'] = $this->test_type->get_all();
 		$data['obj'] = $this->model->get_user_details($user_id);
 		$this->load->view('user/create', $data);
 		
