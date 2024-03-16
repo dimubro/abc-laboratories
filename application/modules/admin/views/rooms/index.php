@@ -33,7 +33,7 @@
     <?php foreach ($records as $k => $val): ?>
     <tr>
       <td><center><?=$k+1?></center></td>
-      <td><center><?=$val->RoomNumber?></center></td>
+      <td><center>Room <?=$val->RoomNumber?></center></td>
       
       <td><center><a class="btn btn-warning btn-sm" href="<?=base_url()?>admin/Edit-Room/<?=$val->RoomId?>"><i class="fas fa-pen"></i></a>
         <button class="btn btn-danger btn-sm" onclick="delete_modal('<?= base_url() ?>admin/Delete-Room/<?=$val->RoomId?>');"><i class="fas fa-trash-alt"></i></button></center></td>

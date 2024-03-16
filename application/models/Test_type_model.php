@@ -22,6 +22,7 @@ class Test_type_model extends CI_Model
 		if($rooms){
 			$this->db->where_not_in('RoomId', $rooms);
 		}
+		
 		$this->db->order_by('RoomNumber', 'asc');
 		$data = $this->db->get('room');
 		return $data->result();
@@ -40,6 +41,7 @@ class Test_type_model extends CI_Model
 	}
 	public function get_data($TestTypeId){
 		$this->db->where('TestTypeId', $TestTypeId);
+
 		$data = $this->db->get('test_type');
 		return $data->row();
 	}

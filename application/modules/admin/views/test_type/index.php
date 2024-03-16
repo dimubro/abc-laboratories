@@ -28,7 +28,7 @@
       <th scope="col">Image</th>
       <th scope="col">Test Type</th>
       <th scope="col">Room</th>
-      <th scope="col">Assimated Time</th>
+      <!-- <th scope="col">Assimated Time</th> -->
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -37,9 +37,9 @@
     <tr>
       <td><center><?=$k+1?></td>
       <td><center><img style="width: 20%;" src="<?=base_url()?>media/image/<?=$val->Image?>"></center></td>
-      <td><center><?=$val->RoomNumber?></center></td>
+      <td><center>Room <?=$val->RoomNumber?></center></td>
       <td><center><?=$val->TestTitle?></center></td>
-      <td><center><?=$val->AsstmatedTime?> Minutes</center></td>
+      <!-- <td><center><?=$val->AsstmatedTime?> Minutes</center></td> -->
       <td><center><a class="btn btn-warning btn-sm" href="<?=base_url()?>admin/Edit-Test-Types/<?=$val->TestTypeId ?>"><i class="fas fa-pen"></i></a>
         <button class="btn btn-danger btn-sm" onclick="delete_modal('<?= base_url() ?>admin/Delete-Test-Types/<?=$val->TestTypeId ?>');"><i class="fas fa-trash-alt"></i></button></center></td>
     </tr>
