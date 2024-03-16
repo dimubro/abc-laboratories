@@ -92,6 +92,19 @@
                                         <input type="text" required="" onkeypress="return isNumber(event);" value="<?=$obj->AsstmatedTime?>" name="form[AsstmatedTime]" class="form-control" id="usr">
                                       </div>
                                     </div>
+                                    <div class="col-md-6">
+                                         <div class="form-group">
+                                          <label for="usr">Test Category</label>
+                                          <select required="" name="form[TestTypeId]" class="form-control" id="sel1">
+                                            <option value="">Select Test Category</option>
+                                            <?php foreach ($test_type as $k => $va): ?>
+                                                <option value="<?=$va->TestTypeId?>"><?=$va->TestTitle?></option>
+                                            <?php endforeach ?>
+                                            
+                                            
+                                          </select>
+                                        </div> 
+                                    </div>
                                     <div class="col-md-12">
                                       <div class="form-group">
                                         <label for="usr">Description</label>
@@ -145,19 +158,19 @@
                             <div id="percentage_div" style="display: none;" class="col-md-4">
                                 <div class="form-group">
                                     <label for="usr">Discount Percentage (%):</label>
-                                    <input type="text" required="" onkeypress="return isNumber(event);" value="<?=$obj->Percentage?>" name="form[Percentage]" class="form-control" id="usr">
+                                    <input type="text" onkeypress="return isNumber(event);" value="<?=$obj->Percentage?>" name="form[Percentage]" class="form-control" id="usr">
                                 </div>
                             </div>
                             <div  id="start_date_div" style="display: none;" class="col-md-4">
                                 <div class="form-group">
                                     <label for="usr">Discount Start Date:</label>
-                                    <input type="text" required=""  value="<?=$obj->Percentage?>" name="form[StartDate]" class="form-control" id="datepicker11">
+                                    <input type="text"  value="<?=$obj->Percentage?>" name="form[StartDate]" class="form-control" id="datepicker11">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div id="end_date_div" style="display: none;" class="form-group">
                                     <label for="usr">Discount End Date:</label>
-                                    <input type="text" required="" value="<?=$obj->Percentage?>" name="form[EndDate]" class="form-control" id="datepicker12">
+                                    <input type="text" value="<?=$obj->Percentage?>" name="form[EndDate]" class="form-control" id="datepicker12">
                                 </div>
                             </div>
                         </div>
