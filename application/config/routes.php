@@ -79,4 +79,7 @@ $route['admin/Edit-Test/(:any)'] = 'admin/test/edit/$1';
 $route['admin/Delete-Test/(:any)'] = 'admin/test/delete/$1';
 
 // home
-$route['pre-search'] = 'home/per_search';
+$route['register'] = 'user/register';
+// $route['register'] = 'user/register';
+$route['save-register'] = 'user/save_register';
+

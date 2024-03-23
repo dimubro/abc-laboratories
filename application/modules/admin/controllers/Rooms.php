@@ -37,9 +37,9 @@ class Rooms extends MY_Controller
                     <strong>Success!</strong> Record succesfully updaetd !!!
                   </div>');
 					}else{
-						$this->session->set_flashdata('notification', '<div class="alert alert-danger">
-                    <strong>wrong!</strong> Somthing went wrong !!!
-                  </div>');
+						$this->session->set_flashdata('notification', '<div class="alert alert-success">
+  <strong>Your Patient no: ABC-12345</strong> Your account has been created please login!!
+</div>');
 					}
 					
 				}

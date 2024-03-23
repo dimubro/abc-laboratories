@@ -10,16 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?=base_url()?>assets/html/css/style.css">
 
-    <style>
+    <!-- <style>
+        .card2 {
+            background-image: url("<?=base_url()?>assets/html/image/index.jpg");
+            background-size: cover;
+        }
+    </style> -->
+
+</head>
+<body>
+<style>
         .card2 {
             background-image: url("<?=base_url()?>assets/html/image/index.jpg");
             background-size: cover;
         }
     </style>
-
-</head>
-<body>
-
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 my-5 g-4">
         <div class="col-lg-4 col-md-12">
