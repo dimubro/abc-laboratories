@@ -57,4 +57,31 @@ class User extends Front_Controller
 		}	
 		redirect(base_url().'register');
 	}
+	public function login(){
+		$this->view('login');
+	}
+	public function check_login(){
+		if($this->input->post('Email')){
+			$this->form_validation->set_rules('Email', 'Email', 'required|valid_email');
+			$this->form_validation->set_rules('Password', 'Password', 'required');
+			if($this->form_validation->run()){
+				
+				 $user = $this->model->login($this->input->post('Email'), sha1($this->input->post('Password')));
+				 // print_r($user);
+				 if($user){
+				 	$this->session->set_userdata("patient", $user);
+				 	redirect(base_url());
+				 }else{
+				 	$this->session->set_flashdata('notification', '<div class="alert alert-info">
+                    <strong>Ops!</strong> check your email or password!!
+                  </div>');
+				 	redirect(base_url().'login');
+				 }
+				 
+
+			}else{
+				redirect(base_url().'login');
+			}
+		}
+	}
 }

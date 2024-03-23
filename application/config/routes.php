@@ -82,4 +82,6 @@ $route['admin/Delete-Test/(:any)'] = 'admin/test/delete/$1';
 $route['register'] = 'user/register';
 // $route['register'] = 'user/register';
 $route['save-register'] = 'user/save_register';
+$route['login'] = 'user/login';
+$route['check-login'] = 'user/check_login';
 
