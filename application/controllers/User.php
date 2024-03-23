@@ -84,4 +84,9 @@ class User extends Front_Controller
 			}
 		}
 	}
+	public function log_out(){
+		$this->session->sess_destroy();
+    	unset($_SESSION);
+    	redirect(base_url());
+	}
 }

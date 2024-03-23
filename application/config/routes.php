@@ -84,4 +84,5 @@ $route['register'] = 'user/register';
 $route['save-register'] = 'user/save_register';
 $route['login'] = 'user/login';
 $route['check-login'] = 'user/check_login';
+$route['log-out'] = 'user/log_out';
 
