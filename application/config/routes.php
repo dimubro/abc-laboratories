@@ -94,5 +94,8 @@ $route['booking/(:any)/(:any)'] = 'home/booking/$1/$2';
 $route['save-booking'] = 'home/save_booking';
 $route['payment/(:any)'] = 'home/payment/$1';
 
+$route['save-payment'] = 'home/save_payment';
+
+$route['appoinment-summery/(:any)'] = 'home/summery/$1';
 
 

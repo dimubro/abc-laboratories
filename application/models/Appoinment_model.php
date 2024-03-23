@@ -14,4 +14,9 @@ class Appoinment_model extends CI_Model
 		$this->db->where('AppoinmentId', $appoinment_id);
 		return $this->db->update('appoinment', $d);
 	}
+	public function get_appoinment_data($appoinment_id){
+		$this->db->where('AppoinmentId', $appoinment_id);
+		$data = $this->db->get('appoinment');
+		return $data->row();
+	}
 }

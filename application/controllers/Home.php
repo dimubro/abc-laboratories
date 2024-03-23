@@ -46,6 +46,8 @@ class Home extends Front_Controller
       $post['TestId'] = $this->input->post('TestId');
       $post['PatientId'] = $this->session->patient->PatientId;
       $post['BookingDate'] = date('Y-m-d H:i:s');
+      $test = $this->test->get_data($post['TestId']);
+      $post['Price'] = $test->Price;
       // print_r($post);
       $appoinment_id = $this->model->insert_appoinment($post);
       $d['AppoinmentNo'] = "#".str_pad($appoinment_id, 5, "0", STR_PAD_LEFT);
@@ -53,8 +55,32 @@ class Home extends Front_Controller
       redirect(base_url().'payment/'.$appoinment_id);
     }
   }
-  public function payment(){
-    $this->view('payment');
+  public function payment($appoinment_id){
+    $data['obj'] = $this->model->get_appoinment_data($appoinment_id);
+    $this->view('payment', $data);
+  }
+  public function save_payment(){
+    if($post = $this->input->post('form')){
+      // print_r($post);
+      $data['Status'] = 1;
+      $res = $this->model->update_appoinment($post['AppoinmentId'], $data);
+      redirect(base_url().'appoinment-summery/'.$post['AppoinmentId']);
+    }
+  }
+  public function summery($appoinment_id){
+    $data['obj'] = $this->model->get_appoinment_data($appoinment_id);
+    $data['test'] = $this->test->get_data($data['obj']->TestId);
+    $data['type'] = $this->type->get_data($data['obj']->TestTypeId);
+    $data['room'] = $this->room->get_room_details($data['type']->RoomId);
+    $this->send_email($appoinment_id);
+    $this->view('summery', $data);
+  }
+  public function send_email($appoinment_id){
+    $data['obj'] = $this->model->get_appoinment_data($appoinment_id);
+    $data['test'] = $this->test->get_data($data['obj']->TestId);
+    $data['type'] = $this->type->get_data($data['obj']->TestTypeId);
+    $data['room'] = $this->room->get_room_details($data['type']->RoomId);
+    
   }
 }
 

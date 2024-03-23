@@ -1,5 +1,38 @@
 <?php $this->load->view('inc/header'); ?>
 <?php $this->load->view('inc/top_bar'); ?>
+<style>
+    /* Basic styling for demonstration */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .error {
+        color: red;
+        margin-top: 5px;
+    }
+</style>
 <section class="vh-100">
   <div class="container-fluid">
     <div class="row">
@@ -14,53 +47,28 @@
         <div class="d-flex align-items-center px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
           
-          	<div style="width: 500px">
-            <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Payments</h4>
-            <?=$this->session->flashdata('notification')?>
+            <div style="width: 500px">
             
-    
-    
-
-            <?php 
-                        $hidden = array('TestTypeId' => $obj->TestTypeId, 'TestId' =>$obj->TestId );
-                        echo form_open('save-booking', '', $hidden);
-                        ?>
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example28">Date</label>
-              <input type="text" required="" name="form[AppoinmentDate]" class="form-control form-control datepicker" data-date-format="mm/dd/yyyy">
-            </div>
             
-            <div class="form-outline mb-4">
-              <label class="form-label"  for="form2Example28">Time</label>
-              <select required="" name="form[Time]" class="form-control" id="sel1">
-                <option  value="">Select Time</option>
-                <option value="08:00 AM-09:00 AM">08:00 AM-09:00 AM</option>
-                <option value="09:00 AM-10:00 AM">09:00 AM-10:00 AM</option>
-                <option value="10:00 AM-11:00 AM">10:00 AM-11:00 AM</option>
-                <option value="11:00 AM-12:00 PM">11:00 AM-12:00 PM</option>
-                <option value="12:00 PM-01:00 AM">12:00 PM-01:00 AM</option>
-                <option value="01:00 PM-02:00 AM">01:00 PM-02:00 AM</option>
-                <option value="02:00 PM-03:00 AM">02:00 PM-03:00 AM</option>
-                <option value="03:00 PM-04:00 AM">03:00 PM-04:00 AM</option>
-                <option value="04:00 PM-05:00 AM">04:00 PM-05:00 AM</option>
-                <option value="05:00 PM-06:00 AM">05:00 PM-06:00 AM</option>
-                <option value="06:00 PM-07:00 AM">06:00 PM-07:00 AM</option>
-                <option value="07:00 PM-08:00 AM">07:00 PM-08:00 AM</option>
-                <option value="08:00 PM-09:00 AM">08:00 PM-09:00 AM</option>
-              </select>
-            </div>
+            <h2>Payment Details</h2>
+            <form id="paymentForm" method="post" action="<?=base_url()?>save-payment" onsubmit="return validateForm()">
+                <input type="hidden" value="<?=$obj->AppoinmentId?>" name="form[AppoinmentId]">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" maxlength="16" pattern="\d*" title="Please enter only numbers">
 
-            <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-lg btn-block w-100" type="submit">Book Now</button>
-            </div>
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
 
-            <!-- <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot Password?</a></p> -->
-            <!-- <p>Don't have an account? <a href="<?=base_url()?>register" class="">Sign Up</a></p> -->
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" maxlength="4" pattern="\d*" title="Please enter only numbers">
 
-          </div>
+                <!-- <input type="submit" value="Submit"> -->
+                <button class="btn btn-info btn-lg btn-block w-100" type="submit">Pay now <?=number_format($obj->Price,2)?> </button>
+            </form>
 
-        </div>
-        <?= form_close() ?> 
+
+            
+           
       </div>
       
     </div>
@@ -69,7 +77,56 @@
 <?php $this->load->view('inc/footer'); ?>
 
 <script type="text/javascript">
-  $('.datepicker').datepicker({
-    format: 'yyyy-mm-dd',
-  });
+
+function validateForm() {
+    var cardNumber = document.getElementById("cardNumber").value;
+    var expiryDate = document.getElementById("expiryDate").value;
+    var cvv = document.getElementById("cvv").value;
+    var error = false;
+    var errorMessage = "";
+
+    // Card number validation
+    if (!isValidCardNumber(cardNumber)) {
+        errorMessage += "Please enter a valid card number.\n";
+        error = true;
+    }
+
+    // Expiry date validation
+    if (!isValidExpiryDate(expiryDate)) {
+        errorMessage += "Please enter a valid expiry date (MM/YY).\n";
+        error = true;
+    }
+
+    // CVV validation
+    if (!isValidCVV(cvv)) {
+        errorMessage += "Please enter a valid CVV.\n";
+        error = true;
+    }
+
+    // Display error message if any
+    if (error) {
+        alert(errorMessage);
+        return false;
+    }
+
+    // Proceed with form submission
+    return true;
+}
+
+function isValidCardNumber(cardNumber) {
+    // Check if card number is exactly 16 digits
+    return /^\d{16}$/.test(cardNumber);
+}
+
+function isValidExpiryDate(expiryDate) {
+    // Validate expiry date format (MM/YY)
+    var regex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    return regex.test(expiryDate);
+}
+
+function isValidCVV(cvv) {
+    // Check if CVV is exactly 3 or 4 digits
+    return /^\d{3,4}$/.test(cvv);
+}
+
 </script>
