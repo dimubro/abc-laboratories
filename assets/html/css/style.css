@@ -29,10 +29,10 @@
     background-size: auto 100%;
 }
 
-.btn {
+/*.btn {
     background-color: #CFF480 !important;
     border: none !important;
-}
+}*/
 
 a {
     color: #CFF480 !important;
@@ -42,4 +42,12 @@ a {
 .h-custom-2 {
 height: 100%;
 }
+}
+
+.btn-home {
+  background-color: #FFF !important;
+  border: none !important;
+  color: #000 !important;
+  /*font-size: ;*/
+  font-weight: bold;
 }

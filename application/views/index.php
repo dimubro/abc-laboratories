@@ -37,7 +37,7 @@
               </div>
               <div class="d-flex justify-content-between align-items-center ">
                 <h4 class="card-text mb-0"><b>Create a Account</b></h4>
-                <a href="<?=base_url()?>register" class="btn btn-light rounded-pill px-5 py-4">Register</a>
+                <a href="<?=base_url()?>register" class="btn btn-light rounded-pill px-5 py-4 btn-home">Register</a>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
                 <p class="card-text mb-5">Timely care with Virtual consultation
                     typically being scheduled.</p>
                 </div>
-                <a href="#" class="btn btn-light rounded-pill w-50 px-5 py-4 mt-5">Book now</a>
+                <a href="#" class="btn btn-light rounded-pill w-50 px-5 py-4 mt-5 btn-home">Start</a>
           </div>
         </div>
       
