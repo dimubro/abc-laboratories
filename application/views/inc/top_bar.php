@@ -28,7 +28,7 @@
                     </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="dropdown-item" href="<?=base_url()?>login">Login</a>
+                            <a class="dropdown-item " href="<?=base_url()?>login">Login</a>
                         </li>
                     <?php endif ?>
                      

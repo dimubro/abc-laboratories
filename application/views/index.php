@@ -18,7 +18,7 @@
               </div>
               <div class="d-flex justify-content-between align-items-center ">
                 <h4 class="card-text mb-0"><b>Create a Account</b></h4>
-                <a href="<?=base_url()?>register" class="btn btn-light rounded-pill px-5 py-4 btn-home">Register</a>
+                <a href="<?=base_url()?>register" class="btn btn-light rounded-pill px-5 py-4 btn-book">Register</a>
             </div>
           </div>
         </div>

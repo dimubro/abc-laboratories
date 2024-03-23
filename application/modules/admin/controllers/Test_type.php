@@ -38,8 +38,8 @@ class Test_type extends MY_Controller
     }
     public function save_form(){
     	if ($post = $this->input->post('form')) {
-    		 	$this->img_width = '800px';
-                $this->img_height = '472px';
+    		 	$this->img_width = '690px';
+                $this->img_height = '390px';
                 $config['upload_path']          = './media/image';
                 $config['allowed_types']        = 'gif|jpg|png|pdf|jpeg';
 

@@ -85,4 +85,9 @@ $route['save-register'] = 'user/save_register';
 $route['login'] = 'user/login';
 $route['check-login'] = 'user/check_login';
 $route['log-out'] = 'user/log_out';
+$route['profile'] = 'patient/index';
+
+$route['test-types'] = 'home/test_type';
+
+
 
