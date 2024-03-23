@@ -15,39 +15,11 @@
 
           
           	<div style="width: 500px">
-            <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Booking</h4>
+            <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Payments</h4>
             <?=$this->session->flashdata('notification')?>
-            <table class="table">
+            
     
-    <tbody>
-      <tr>
-        <td>Patient</td>
-        <td><?=$this->session->patient->FullName?></td>
-        
-      </tr>
-      <tr>
-        <td>Test Category</td>
-        <td><?=$type->TestTitle?></td>
-        
-      </tr>
-      <tr>
-        <td>Test</td>
-        <td><?=$obj->TestTitle?></td>
-        
-      </tr>
-      <tr>
-        <td>Room No</td>
-        <td><?=$room->RoomNumber?></td>
-        
-      </tr>
-      <tr>
-        <td>Price</td>
-        <td>LKR <?=number_format($obj->Price, 2);?></td>
-        
-      </tr>
-      
-    </tbody>
-  </table>
+    
 
             <?php 
                         $hidden = array('TestTypeId' => $obj->TestTypeId, 'TestId' =>$obj->TestId );

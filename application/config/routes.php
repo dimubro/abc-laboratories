@@ -91,5 +91,8 @@ $route['test-types'] = 'home/test_type';
 $route['medical-tests/(:any)/(:any)'] = 'home/medical_tests/$1/$2';
 $route['booking/(:any)/(:any)'] = 'home/booking/$1/$2';
 
+$route['save-booking'] = 'home/save_booking';
+$route['payment/(:any)'] = 'home/payment/$1';
+
 
 

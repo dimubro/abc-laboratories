@@ -9,6 +9,7 @@ class Home extends Front_Controller
     $this->load->model('Test_type_model', 'type');
     $this->load->model('Test_model', 'test');
     $this->load->model('Rooms_model', 'room');
+    $this->load->model('Appoinment_model', 'model');
   }
 
   public function error()
@@ -38,6 +39,22 @@ class Home extends Front_Controller
     $data['room'] = $this->room->get_room_details($data['type']->RoomId);
     $this->view('booking', $data);
   }
-
+  public function save_booking(){
+    if($post = $this->input->post('form')){
+      // print_r($post);
+      $post['TestTypeId'] = $this->input->post('TestTypeId');
+      $post['TestId'] = $this->input->post('TestId');
+      $post['PatientId'] = $this->session->patient->PatientId;
+      $post['BookingDate'] = date('Y-m-d H:i:s');
+      // print_r($post);
+      $appoinment_id = $this->model->insert_appoinment($post);
+      $d['AppoinmentNo'] = "#".str_pad($appoinment_id, 5, "0", STR_PAD_LEFT);
+      $res = $this->model->update_appoinment($appoinment_id, $d);
+      redirect(base_url().'payment/'.$appoinment_id);
+    }
+  }
+  public function payment(){
+    $this->view('payment');
+  }
 }
 
