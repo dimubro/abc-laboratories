@@ -88,6 +88,8 @@ $route['log-out'] = 'user/log_out';
 $route['profile'] = 'patient/index';
 
 $route['test-types'] = 'home/test_type';
+$route['medical-tests/(:any)/(:any)'] = 'home/medical_tests/$1/$2';
+$route['booking/(:any)/(:any)'] = 'home/booking/$1/$2';
 
 
 

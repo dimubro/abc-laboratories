@@ -13,8 +13,8 @@
                     	
                         <div class="title">
                         	
-                            <h3 style="font-weight: bold;">Test Types</h3>
-                            <p>Select test type</p>
+                            <h3 style="font-weight: bold;"><?=$obj->TestTitle?></h3>
+                            <p>Select a test </p>
 
                         </div>
                        
@@ -28,8 +28,8 @@
                             <img src="<?=base_url()?>media/image/<?=$val->Image?>" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title"><?=$val->TestTitle?></h5>
-                              
-                              <a href="<?=base_url()?>medical-tests/<?=url_title($val->TestTitle)?>/<?=$val->TestTypeId?>" style="width:100%" class="btn btn-primary btn-book btn-block mt-2 py-3">Select</a>
+                              <label>LKR <?=number_format($val->Price, 2)?></label>
+                              <a href="<?=base_url()?>booking/<?=url_title($val->TestTitle)?>/<?=$val->TestId?>" style="width:100%" class="btn btn-primary btn-book btn-block mt-2 py-3">Select</a>
                             </div>
                           </div>
                     </div>

@@ -28,4 +28,9 @@ class Test_model extends CI_Model
 		$this->db->where('TestId', $TestId);
 		return $this->db->update('test', $post);
 	}
+	public function get_all_home($test_type_id){
+		$this->db->where('TestTypeId', $test_type_id);
+		$data = $this->db->get('test');
+		return $data->result();
+	}
 }
