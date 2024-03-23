@@ -1,0 +1,23 @@
+
+* {
+    font-family: "Urbanist", sans-serif !important;
+}
+
+.card {
+    height: 325px !important;
+    border: none !important;
+}
+.card1 {
+    background-color: #CFF480;
+}
+.card1 h1 {
+    font-size: 95px;
+    font-weight: bold;
+}
+.card2 {
+    background-image: url("assets/images/index.jpg");
+    background-size: cover;
+}
+.btn {
+    font-weight: bold;
+}
