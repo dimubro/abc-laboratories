@@ -99,3 +99,7 @@ define('DOC', DOMAIN . "media/doc/");
 
 define('META_DESCRIPTION', '');
 define('META_KEYWORDS', '');
+
+define('smtp_host', '');
+define('smpt_email', '');
+define('smtp_password', '');

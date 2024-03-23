@@ -30,6 +30,7 @@ class Test_model extends CI_Model
 	}
 	public function get_all_home($test_type_id){
 		$this->db->where('TestTypeId', $test_type_id);
+		$this->db->where('IsDeleted', 0);
 		$data = $this->db->get('test');
 		return $data->result();
 	}

@@ -80,7 +80,42 @@ class Home extends Front_Controller
     $data['test'] = $this->test->get_data($data['obj']->TestId);
     $data['type'] = $this->type->get_data($data['obj']->TestTypeId);
     $data['room'] = $this->room->get_room_details($data['type']->RoomId);
+
     
+
+
+
+    $config = array(
+    'protocol'  => 'smtp',
+    'smtp_host' => smtp_host,
+    'smtp_port' => 465,
+    'smtp_user' => smpt_email,
+    'smtp_pass' => smtp_password,
+    'mailtype'  => 'html',
+    'charset'   => 'utf-8'
+
+);
+      // echo $mge;
+      $msg = "<h2>Appointment Details: ".$data['obj']->AppoinmentNo."</h2>
+      <p><strong>Date:</strong> ".$data['obj']->AppoinmentDate."</p>
+      <p><strong>Time:</strong> ".$data['obj']->Time."</p>
+      <p><strong>Room Number:</strong> ".$data['room']->RoomNumber."</p>
+      <p><strong>Test:</strong> ".$data['test']->TestTitle."</p>
+
+      <p>We look forward to seeing you at the meeting. If you have any questions or need to reschedule, please let us know.</p>
+
+      <p>Best regards,<br>
+      ".TITLE."</p>";
+      // echo $msg;
+
+      $this->load->library('email');
+      $config['mailtype'] = 'html';
+      $this->email->initialize($config);
+      $this->email->to($this->session->patient->Email);
+      $this->email->from('noreply@abclaboratories.com', title);
+      $this->email->subject("ABC laboratories- Appoinment - ".$data['obj']->AppoinmentNo);
+      $this->email->message($msg);
+      $this->email->send();
   }
 }
 
