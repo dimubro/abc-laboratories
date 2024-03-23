@@ -56,7 +56,7 @@
                 <p class="card-text mb-5">Timely care with Virtual consultation
                     typically being scheduled.</p>
                 </div>
-                <a href="#" class="btn btn-light rounded-pill w-50 px-5 py-4 mt-5 btn-home">Start</a>
+                <a href="<?=base_url()?>test-types" class="btn btn-light rounded-pill w-50 px-5 py-4 mt-5 btn-home">Start</a>
           </div>
         </div>
       
