@@ -8,6 +8,7 @@ class Home extends Front_Controller
     parent::__construct();
     $this->load->model('Test_type_model', 'type');
     $this->load->model('Test_model', 'test');
+    $this->load->model('Rooms_model', 'room');
   }
 
   public function error()
@@ -28,11 +29,14 @@ class Home extends Front_Controller
     $data['obj'] = $this->type->get_data($test_type_id);
 
     $data['records'] = $this->test->get_all_home($test_type_id);
-    
+
     $this->view('tests', $data);
   }
   public function booking($title, $test_id){
-    
+    $data['obj'] = $this->test->get_data($test_id);
+    $data['type'] = $this->type->get_data($data['obj']->TestTypeId);
+    $data['room'] = $this->room->get_room_details($data['type']->RoomId);
+    $this->view('booking', $data);
   }
 
 }
