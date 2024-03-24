@@ -60,7 +60,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom page-title-div px-3">
-                <h5 class="title_page">Dashboard > Test Types > <?=($obj->TestTypeId)?"Edit":"Create"?> Room</h5>
+                <h5 class="title_page">Dashboard > Test Types > <?=($obj->TestTypeId)?"Edit":"Create"?> Test Type</h5>
             </div>
             
 
@@ -68,7 +68,7 @@
                 <div class="col-md-12">
                     <?=$this->session->flashdata('notification')?>
                     <div class="card card_backgroud">
-                      <div class="card-header d-flex justify-content-between align-items-center"><label class="card-title">Room Details</label>
+                      <div class="card-header d-flex justify-content-between align-items-center"><label class="card-title">Test Type Details</label>
                     <!-- <a href="<?=base_url()?>admin/Create-User" class="btn btn-primary">Add User</a> -->
                       </div>
                       <?php 

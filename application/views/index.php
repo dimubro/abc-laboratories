@@ -11,14 +11,17 @@
         <div class="col-lg-4 col-md-12">
           <div class="card card1 rounded-4 p-4">
             <div class="card-body p-0">
-                <h4 class="card-title">Total tests</h4>
+                <h4 class="card-title">Total Clients</h4>
                 <h1 class="">100</h1>
                 
                 
               </div>
               <div class="d-flex justify-content-between align-items-center ">
+                <?php if (!$this->session->patient): ?>
                 <h4 class="card-text mb-0"><b>Create a Account</b></h4>
+                
                 <a href="<?=base_url()?>register" class="btn btn-light rounded-pill  px-5 py-4 btn-home">Register</a>
+                <?php endif ?>
             </div>
           </div>
         </div>

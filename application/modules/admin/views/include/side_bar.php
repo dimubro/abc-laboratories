@@ -8,7 +8,7 @@
                 </a>
             </li>
             
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link a-color dropdown-toggle" href="#"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-shopping-cart side-bar-icon menu-toggle"></i> Orders
                 </a>
@@ -22,7 +22,7 @@
                     </li>
                 </ul>
             </div>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link a-color" href="<?=base_url()?>admin/Rooms">
                     <i class="fas fa-hospital side-bar-icon"></i> Rooms
@@ -42,6 +42,21 @@
             <li class="nav-item">
                 <a class="nav-link a-color" href="<?=base_url()?>admin/User">
                     <i class="fas fa-users side-bar-icon"></i> User
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link a-color a-color" href="<?=base_url()?>admin/Today-Appointment">
+                    <i class="fa fa-calendar side-bar-icon"></i> Appointment
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link a-color" href="<?=base_url()?>admin/All-Appointment">
+                    <i class="fa fa-file side-bar-icon"></i> All Appointment
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link a-color" href="<?=base_url()?>admin/Report">
+                    <i class="fa fa-file side-bar-icon"></i> Reports
                 </a>
             </li>
             <li class="nav-item">

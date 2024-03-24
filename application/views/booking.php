@@ -22,7 +22,7 @@
     <tbody>
       <tr>
         <td>Patient</td>
-        <td><?=$this->session->patient->FullName?></td>
+        <td><?=$this->session->patient->FullName?> - <?=$this->session->patient->PatientNo?></td>
         
       </tr>
       <tr>
@@ -99,5 +99,6 @@
 <script type="text/javascript">
   $('.datepicker').datepicker({
     format: 'yyyy-mm-dd',
+    startDate: '+1d'
   });
 </script>
