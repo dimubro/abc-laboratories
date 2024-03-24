@@ -78,6 +78,9 @@ $route['admin/Create-Test'] = 'admin/test/create';
 $route['admin/Edit-Test/(:any)'] = 'admin/test/edit/$1';
 $route['admin/Delete-Test/(:any)'] = 'admin/test/delete/$1';
 
+$route['admin/Today-Appointment'] = 'admin/appointment/today';
+$route['admin/All-Appointment'] = 'admin/appointment/all_apointment';
+
 // home
 $route['register'] = 'user/register';
 // $route['register'] = 'user/register';
