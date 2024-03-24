@@ -80,6 +80,7 @@ $route['admin/Delete-Test/(:any)'] = 'admin/test/delete/$1';
 
 $route['admin/Today-Appointment'] = 'admin/appointment/today';
 $route['admin/All-Appointment'] = 'admin/appointment/all_apointment';
+$route['admin/View-Appointment/(:any)'] = 'admin/appointment/view_appointment/$1';
 
 // home
 $route['register'] = 'user/register';

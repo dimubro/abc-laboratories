@@ -51,7 +51,7 @@
       }elseif($val->Status==2){
         echo 'Completed';
       } ?></center></td>
-      <td><center><a class="btn btn-warning btn-sm" href="<?=base_url()?>admin/View-Appointment/<?=$val->RoomId?>"><i class="fa fa-eye"></i></a>
+      <td><center><a class="btn btn-warning btn-sm" href="<?=base_url()?>admin/View-Appointment/<?=$val->AppoinmentId?>"><i class="fa fa-eye"></i></a>
         </td>
     </tr>
     <?php endforeach ?>
