@@ -8,6 +8,8 @@ class Patient extends Front_Controller
     parent::__construct();
 
     $this->load->model('Patient_model', 'model');
+    $this->load->model('Appoinment_model', 'appoinment');
+
     $this->load->library('pagination');
     $this->load->library('form_validation');
     $this->encryption->initialize(
@@ -20,5 +22,9 @@ class Patient extends Front_Controller
   }
   public function index(){
     $this->view('profile/index');
+  }
+  public function appointments(){
+    $data['records'] = $this->appoinment->get_pationts_records();
+    $this->view('profile/appointments', $data);
   }
 }

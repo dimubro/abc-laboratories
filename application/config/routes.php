@@ -90,6 +90,7 @@ $route['login'] = 'user/login';
 $route['check-login'] = 'user/check_login';
 $route['log-out'] = 'user/log_out';
 $route['profile'] = 'patient/index';
+$route['appointments'] = 'patient/appointments';
 
 $route['test-types'] = 'home/test_type';
 $route['medical-tests/(:any)/(:any)'] = 'home/medical_tests/$1/$2';

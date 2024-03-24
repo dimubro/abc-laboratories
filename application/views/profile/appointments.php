@@ -1,6 +1,5 @@
 <?php $this->load->view('inc/header'); ?>
 <?php $this->load->view('inc/top_bar'); ?>
-
 <section class="dashboard">
 
     <div class="container-fluid">
@@ -17,10 +16,50 @@
             <div class="col-lg-10">
                 <div class="container pt-5">
                     <div class="texts mb-5">
-                        <h3>Welcome, <?=$this->session->patient->FullName?></h3>
-                        <p>Welcome to your user dashboard. From here you can view your account details, appointments and manage your account as well.</p>
+                        <h3>Appointments</h3>
+                        
                     </div>
                 <div class="row">
+                	<div class="col-lg-12">
+                		<table id="myTable" class="table table-style">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Appointment No</th>
+      
+      <th scope="col">Test</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Room</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($records as $k => $val): ?>
+    <tr>
+      <td><center><?=$k+1?></center></td>
+      <td><center><?=$val->AppoinmentNo?></center></td>
+      
+      <td><center><?=$val->TestTitle?></center></td>
+      <td><center><?=$val->AppoinmentDate?></center></td>
+      <td><center><?=$val->Time?></center></td>
+      <td><center><?=$val->RoomNumber?></center></td>
+      <td><center><?php if($val->Status==1){
+        echo 'Pending';
+      }elseif($val->Status==2){
+        echo 'Completed';
+      } ?></center></td>
+      <td>
+      	<?php if ($val->Status==2): ?>
+      		<a class="btn btn-info" target="_blank" download="" href="<?=base_url()?>media/reports/<?=$val->Report?>">Download</a>
+      	<?php endif ?>
+        </td>
+    </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>
+                	</div>
                     <!-- <div class="col-md-3">
                         <div class="box shadow p-3 mb-5 bg-body-tertiary rounded border-end border-primary border-5">
                             <h6 class="text-primary">EARNINGS (MONTHLY)</h6>
