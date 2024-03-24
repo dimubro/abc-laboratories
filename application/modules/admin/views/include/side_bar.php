@@ -54,11 +54,11 @@
                     <i class="fa fa-file side-bar-icon"></i> All Appointment
                 </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link a-color" href="<?=base_url()?>admin/Report">
                     <i class="fa fa-file side-bar-icon"></i> Reports
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link a-color" href="<?=base_url()?>admin/login/log_out">
                     <i class="fas fa-sign-out-alt side-bar-icon"></i> Log Out
